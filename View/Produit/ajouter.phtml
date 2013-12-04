@@ -1,0 +1,113 @@
+<script>
+function validateForm()
+{
+
+if ()
+  {
+  alert("First name must be filled out");
+  return false;
+  }
+}
+</script>
+<br/>
+<h1>Ajouter un nouveau produit</h1>
+<form id="form1" method="post">
+	<table>
+			
+		<tr>
+			<td>Type de produit : </td>
+			<td>
+				<input type="text" id="type_produit_HEF" name="type_produit_HEF" 
+				value="<?php echo $this->viewData['produit']->gettype_produit_HEF();?>"/>
+				<span id="erreur">
+					<?php 
+						echo $this->viewData['produit']->ValidationMessage("type_produit_HEF");
+					?>
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td>Prix  : </td>
+			<td>
+				<input type="text" id="prix" name="prix" 
+				value="<?php echo $this->viewData['produit']->getPrix();?>"/><span>-DH</span>
+				<span id="erreur">
+					<?php 
+					echo $this->viewData['produit']->ValidationMessage("prix");
+					?>
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td>Déscription : </td>
+			<td>
+				<textarea type="text" id="description" name="description" rows="3" cols="17"> 
+				 <?php echo $this->viewData['produit']->getdescription();?></TEXTAREA>
+				<span id="erreur">
+					<?php 
+						echo $this->viewData['produit']->ValidationMessage("description");
+					?>
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td>petite Déscription : </td>
+			<td>
+				<input type="text" id="small_description" name="small_description" 
+				value="<?php echo $this->viewData['produit']->getsmall_description();?>"/>
+				<span id="erreur">
+					<?php 
+						echo $this->viewData['produit']->ValidationMessage("small_description");
+					?>
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td>Quantité : </td>
+			<td><input type="text" id="quantite" name="quantite" 
+			value="<?php echo $this->viewData['produit']->getQuantite();?>"/>
+			<span id="erreur">
+			<?php 
+			echo $this->viewData['produit']->ValidationMessage("quantite");
+			?></span>
+		</td>
+		</tr>
+		<tr>
+			<td>Date de MAJ : </td>
+			<td><input type="date" id="date_de_maj" name="date_de_maj" 
+			value="<?php echo $this->viewData['produit']->getdate_de_maj();?>"/>
+			<span id="erreur">
+			<?php 
+			echo $this->viewData['produit']->ValidationMessage("date_de_maj");
+			?></span></td>
+		</tr>
+		<tr>
+			<td>Numéro Catégorie : </td>
+			<td>
+			<select id="cat" name="Categories_idCategory" >
+				
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+			</select>
+			<span id="erreur">
+			<?php 
+			echo $this->viewData['produit']->ValidationMessage("Categories_idCategory");
+			?></span>
+			</td>
+
+		</tr>
+		<tr>
+			<td>image : </td>
+			<td><input name="image" type="file" value="<?php echo $this->viewData['produit']->getimage();?>" class="btn" />
+				<span id="erreur">
+			<?php 
+			echo $this->viewData['produit']->ValidationMessage("image");
+			?></span>
+			</td>
+		</tr>
+		<tr><td colspan='2'><input type="submit" value=" Ajouter " class="btn"/></td></tr>
+	</table>
+</form>
