@@ -1,0 +1,33 @@
+<br>
+<h2>Listes des clients</h2>
+<table class="table table-striped">
+	<tr>
+		<th>idClient</th><th>nom </th>
+		<th>email</th><th>telephone</th>
+		<th>addresse</th>
+		<th>ville</th><th>civilite</th>
+		<th>motdepasse</th><th>prenom</th>
+	</tr>
+	<?php 
+		//On récupère la liste a partir de viewData
+		foreach($this->viewData['listClient'] as $client) :
+			echo'<tr>
+				 <td>'.$client['idClient'].'</td>
+			     <td>'.$client['nom'].'</td>
+				 <td>'.$client['email'].'</td>
+				  <td>'.$client['telephone'].'</td>
+				   <td>'.$client['addresse'].'</td>
+				    <td>'.$client['ville'].'</td>
+					 <td>'.$client['civilite'].'</td>
+					  <td>'.$client['mdp'].'</td>
+					   <td>'.$client['prenom'].'</td>
+					   
+					   <td><a href="?controler=Client&action=supprimer&id=
+					'.$client['idClient'].'" class="btn btn-danger">Supprimer</a></td>
+
+				 </tr>';
+					   
+				 	endforeach;
+	?>
+	</table>
+	<a href="?controler=Client&action=ajouter" class="btn btn-primary">Ajouter un nouveau client</a>

@@ -1,0 +1,36 @@
+<br>
+<h2>Listes de Produits</h2>
+<table class="table table-striped">
+	<tr>
+		<th>#</th><th>Type du produit </th>
+		<th>Prix (Dh)</th><th>Description</th>
+		<th>Petite Description</th>
+		<th>Quantité</th><th>Date de mise à jour</th>
+		<th># Catégorie</th><th>image</th>
+	</tr>
+	<?php 
+		//On récupère la liste a partir de viewData
+		foreach($this->viewData['listProduit'] as $produit) :
+			echo'<tr>
+				 <td>'.$produit['idProducts'].'</td>
+			     <td>'.$produit['type_produit_HEF'].'</td>
+				 <td>'.$produit['prix'].'</td>
+				 <td>'.$produit['description'].'</td>
+				 <td>'.$produit['small_description'].'</td>
+				 <td>'.$produit['quantite'].'</td>
+				 <td>'.$produit['date_de_maj'].'</td>
+				 <td>'.$produit['Categories_idCategory'].'</td>
+				<td><a href=".\View\img\\'.$produit['image'].'.">'.$produit['image'].'</a></td>
+				 <!-- <td><img  scr=".\View\img\\'.$produit['image'].'" width="72" height="42"></td>-->
+				 <td><a href="?controler=Produit&action=modifier&id=
+					'.$produit['idProducts'].'" class="btn btn-success">Modifier</a></td>
+				 <td><a href="?controler=Produit&action=supprimer&id=
+					'.$produit['idProducts'].'" class="btn btn-danger">Supprimer</a></td>
+
+				 </tr>';
+		endforeach;
+	?>
+</table>
+<a href="?controler=Produit&action=ajouter" class="btn btn-primary">Ajouter un nouveau produit</a>
+
+

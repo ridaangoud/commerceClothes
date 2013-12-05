@@ -1,0 +1,126 @@
+<br/>
+<h1>ajouter client</h1>
+<form id="form1" method="post">
+<table>
+
+			<tr>
+			<td> nom client</td>
+			<td>
+				<input type="text" id="nom" name="nom" 
+				value="<?php echo $this->viewData['client']->getNom();?>"/>
+				<span id="erreur">
+					<?php 
+						echo $this->viewData['client']->ValidationMessage("nom");
+					?>
+				</span>
+				
+			</td>
+			</tr>
+			<tr>
+			<td>email</td>
+			
+			<td>
+				<input type="text" id="email" name="email" 
+				value="<?php echo $this->viewData['client']->getEmail();?>"/>
+				<span id="erreur">
+					<?php 
+						echo $this->viewData['client']->ValidationMessage("email");
+					?>
+				</span>
+				</td>
+				</tr>
+				<tr>
+				<td>telephone</td>
+				<td>
+				<input type="text" id="telephone" name="telephone" 
+				value="<?php echo $this->viewData['client']->getTelephone();?>"/>
+				<span id="erreur">
+					<?php 
+						echo $this->viewData['client']->ValidationMessage("telephone");
+					?>
+				</span>
+				
+			</td>
+			</tr>
+			<tr>
+			<td>Addresse</td>
+			<td>
+				<input type="text" id="addresse" name="addresse" 
+				value="<?php echo $this->viewData['client']->getAddresse();?>"/>
+				<span id="erreur">
+					<?php 
+						echo $this->viewData['client']->ValidationMessage("Addresse");
+					?>
+				</span>
+				
+			</td>
+			</tr>
+			<tr>
+			<td>ville</td>
+			<td>
+				<input type="text" id="ville" name="ville" 
+				value="<?php echo $this->viewData['client']->getVille();?>"/>
+				<span id="erreur">
+					<?php 
+						echo $this->viewData['client']->ValidationMessage("ville");
+					?>
+				</span>
+				
+			</td>
+			</tr>
+			<tr>
+			<td>Civilite</td>
+			<td>
+				<input type="text" id="civilite" name="civilite" 
+				value="<?php echo $this->viewData['client']->getCivilite();?>"/>
+				<span id="erreur">
+					<?php 
+						echo $this->viewData['client']->ValidationMessage("civilite");
+					?>
+				</span>
+				
+			</td>
+			</tr>
+			<tr>
+			<td>mot de passe</td>
+			
+			<td>
+				<input type="text" id="mdp" name="mdp" 
+				value="<?php echo $this->viewData['client']->getMdp();?>"/>
+				<span id="erreur">
+					<?php 
+						echo $this->viewData['client']->ValidationMessage("mdp");
+					?>
+				</span>
+				
+			</td>
+			</tr>
+			<tr>
+			<td>code postal</td>
+			<td>
+				<input type="text" id="codepostal" name="codepostal" 
+				value="<?php echo $this->viewData['client']->getNom();?>"/>
+				<span id="erreur">
+					<?php 
+						echo $this->viewData['client']->ValidationMessage("codepostal");
+					?>
+				</span>
+				
+			</td>
+			</tr>
+			<tr>
+			<td>prenom</td>
+			<td>
+				<input type="text" id="prenom" name="prenom" "
+				value="<?php echo $this->viewData['client']->getPrenom();?>"/>
+				<span id="erreur">
+					<?php 
+						echo $this->viewData['client']->ValidationMessage("prenom");
+					?>
+				</span>
+				
+			</td>
+		</tr>
+		<tr><td colspan='2'><input type="submit" value="ajouter" class="btn"/></td></tr>
+	</table>
+</form>
