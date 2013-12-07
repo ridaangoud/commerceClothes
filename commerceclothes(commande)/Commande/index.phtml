@@ -1,0 +1,27 @@
+<br>
+<h2>Liste des Commandes</h2>
+<table class="table table-striped">
+	<tr>
+		<th>idCustomer_orders</th><th>	Date_creation </th>
+		<th>confirmation_number</th><th>Clients_idClient</th>
+		<th>SItuation_commande</th>
+		
+	</tr>
+	<?php 
+		//On récupère la liste a partir de viewData
+		foreach($this->viewData['listCommande'] as $commande) :
+			echo'<tr>
+				 <td>'.$commande['idCustomer_orders'].'</td>
+			     <td>'.$commande['Date_creation'].'</td>
+				 <td>'.$commande['confirmation_number'].'</td>
+				 <td>'.$commande['Clients_idClient'].'</td>
+				 <td>'.$commande['SItuation_commande'].'</td>
+					
+				 
+				 <td><a href="?controler=Commande&action=modifier&id=
+					'.$commande['idCustomer_orders'].'" class="btn btn-success">Modifier</a></td>
+				</tr>';
+		endforeach;
+	?>
+</table>
+

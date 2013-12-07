@@ -1,0 +1,61 @@
+<br/>
+<h1>Modifier  Commande</h1>
+
+<form id="form1" method="post">
+		<table>
+			
+		<tr>
+			<td>date de création : </td>
+			<td>
+				<input type="text" id="dateCreation"  readonly="true" name="dateCreation"
+				 value="<?php echo $this->viewData['commande']->getDateCreation();?>"/>
+				<span id="erreur">
+					<?php 
+						echo $this->viewData['commande']->ValidationMessage("date Creation");
+					?>
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td>Confirmation number  : </td>
+			<td>
+				<input type="text" id="confirmationNumber" name="confirmationNumber" readonly="true"  value="<?php echo $this->viewData['commande']->getConfirmationNumber();?>"/>
+				<span id="erreur">
+					<?php 
+						echo $this->viewData['commande']->ValidationMessage("Confirmation Number");
+					?>
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td>id Cilent : </td>
+			<td><input  type="text" id="clientIdClient"  readonly="true" name="clientIdClient"
+				 value="<?php echo $this->viewData['commande']->getClientIdClient();?>"/> 
+				<span id="erreur">
+					<?php 
+						echo $this->viewData['commande']->ValidationMessage("Id Client");
+					?>
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td>situation Commande : </td>
+			<td><input type="text"   readonly="true" value="<?php echo $this->viewData['commande']->getSituationCommande();?>"/></td>
+			<td>
+				<select name="situationCommande">
+					<option>en préparation</option>
+					<option>en cours d’expédition</option>
+					<option>expédiée</option>
+				</select>
+				<span id="erreur">
+				<?php 
+				echo $this->viewData['commande']->ValidationMessage("situation Commande");
+				?></span>
+			</td>
+		</tr>
+		
+		
+		
+		<tr><td colspan='2'><input type="submit" value= "Modifier" class="btn"/></td></tr>
+	</table>
+</form>
